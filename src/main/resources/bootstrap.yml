@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: mqtt-service
+server.port: 3234
+info: 
+  name: ${spring.application.name}         
+#eureka:
+#  instance:  
+#    prefer-ip-address: true
+#    instance-id: ${eureka.instance.ip-address}:${spring.application.name}:${server.port} 
+#    status-page-url: http://${zuul.address}${zuul.url}swagger-ui.html
+#  client:
+#    fetchRegistry: true
+#    serviceUrl:
+#      defaultZone: http://${yjy.ip.address:localhost}:8761/eureka/        
+endpoints.health.sensitive: false
+management.security.enabled: false
+
+#MQTT配置信息
+spring.mqtt.url: tcp://192.168.1.74:1884
+spring.mqtt.username: test
+spring.mqtt.password: test
+spring.mqtt.subClientId: yjySubClient
+spring.mqtt.PubClientId: serverId
+spring.mqtt.default.topic: topic 
+spring.mqtt.qos: 0
+spring.mqtt.KeepAlive: 20
+spring.mqtt.connectionTimeout: 10
+
